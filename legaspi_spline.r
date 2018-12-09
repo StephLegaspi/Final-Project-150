@@ -1,6 +1,6 @@
 this.dir <- dirname(parent.frame(2)$ofile)
 setwd(this.dir)
-source("solutions.r")
+source("legaspi_solutions.r")
 
 ColNames2 <- function(interval){
   col_names <- c()
@@ -179,8 +179,11 @@ SetUpFunctions <- function(sol_set, interval){
   count=0
   term=""
   for(i in 1:interval){
+    #term=""
+    #term = paste(term, "f(x) = ", sep = "")
     if(i != 1){
       term = paste(sol_set[(i+count)], "x ^ 2", sep = " * ")
+      #term = paste(term, one_term, sep = "")
       term = paste(term, " + ", sep = "")
       count = count+1
     }
@@ -244,7 +247,7 @@ QuadraticSpline <- function(x_init, x, y){
 
 
 #qsi_result = QuadraticSpline(5, x, y)
-#print(qsi_result$func_list)
+#print(qsi_result$func_list[1])
 
 
 

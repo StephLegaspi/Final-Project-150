@@ -1,6 +1,6 @@
 this.dir <- dirname(parent.frame(2)$ofile)
 setwd(this.dir)
-source("aug_coeff.r")
+source("legaspi_augCoeff.r")
 
 GetUpperTriangular <- function(a, n){
   for(i in 1:(n-1)){

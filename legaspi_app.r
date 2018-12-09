@@ -1,9 +1,9 @@
 library(shinydashboard)
 library(rhandsontable)
 
-source("simp.r")
+source("legaspi_simplex.r")
 source("legaspi_ex5.r")
-source("spline2.r")
+source("legaspi_spline.r")
 
 
 ui <- dashboardPage(
@@ -253,9 +253,9 @@ server <- function(input, output) {
   dimnames = list(c("Denver", "Phoenix", "Dallas", "Totals" ), c("Total", "California", "Utah", "New Mexico", "Illinois", "New York")),
   byrow = TRUE)
   
-  df = matrix(c(560, 10, 8, 6, 5, 4,
-                770, 6, 5, 4, 3, 6,
-                990, 3, 4, 5, 5, 9,
+  df = matrix(c(310, 10, 8, 6, 5, 4,
+                260, 6, 5, 4, 3, 6,
+                280, 3, 4, 5, 5, 9,
                 0, 0, 0, 0, 0, 0,
                 NA, 180, 80, 200, 160, 220
   ),

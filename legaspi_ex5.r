@@ -1,6 +1,6 @@
 this.dir <- dirname(parent.frame(2)$ofile)
 setwd(this.dir)
-source("aug_coeff.r")
+source("legaspi_augCoeff.r")
 source("legaspi_ex4.r")
 
 x = c(50, 50, 50, 70, 70, 70, 80, 80, 80, 90, 90, 90, 100, 100, 100)
