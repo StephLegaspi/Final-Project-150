@@ -235,6 +235,15 @@ PhaseOne <- function(tableu){
   return(res)
 }
 
+CheckSol <- function(col_tableu, row){
+  ctr = 0
+  for(i in 1:row){
+    if(col_tableu[i] == 1){ctr = ctr+1}
+  }
+  if(ctr > 1){ return(FALSE)}
+  else{ return(TRUE) }
+}
+
 GetValues <- function(tableu, row_tableu, col_tableu){
   col_names = colnames(tableu)
   values = InitValues(col_names, col_tableu)
@@ -302,20 +311,20 @@ SimplexMethod <- function(df2){
   return(list(phase_one=phase_one, phase_two=phase_two))
 }
 
-#df2 = matrix(c(310, 10, 8, 6, 5, 4,
-#               260, 6, 5, 4, 3, 6,
-#               280, 3, 4, 5, 5, 9,
-#               0, 0, 0, 0, 0, 0,
-#               NA, 180, 80, 200, 160, 220
-#),
-#nrow = 5,
-#ncol = 6,
-#dimnames = list(c("Denver", "Phoenix", "Dallas", "Shipping", "Demands" ), c("Supply", "California", "Utah", "New Mexico", "Illinois", "New York")),
-#byrow = TRUE)
+df2 = matrix(c(310, 10, 8, 6, 5, 4,
+               260, 6, 5, 4, 3, 6,
+               280, 3, 4, 5, 5, 9,
+               0, 0, 0, 0, 0, 0,
+               NA, 180, 80, 200, 160, 220
+),
+nrow = 5,
+ncol = 6,
+dimnames = list(c("Denver", "Phoenix", "Dallas", "Shipping", "Demands" ), c("Supply", "California", "Utah", "New Mexico", "Illinois", "New York")),
+byrow = TRUE)
 
 
-#rezz = SimplexMethod(df2)
-#print(rezz)
+rezz = SimplexMethod(df2)
+print(rezz)
 #proj_tableu = preprocessMatrix(df2)
 #print(proj_tableu)
 #phase_one = PhaseOne(proj_tableu)
